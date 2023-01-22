@@ -13,4 +13,8 @@ io.on('connection', socket => { //io.on listens to several socket connections
     socket.on('send', message => {
         socket.broadcast.emit('receive', { message: message, name: users[socket.id] })//server broadcasts event receive for the users
     });
+    socket.on('disconnect', message => {
+        socket.broadcast.emit('left', users[socket.id])
+        delete users[socket.id]
+    })
 })

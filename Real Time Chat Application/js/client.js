@@ -33,3 +33,7 @@ socket.on('user-joined', name => {
 socket.on('receive', data => {
     append(`${data.name}: ${data.message} `, 'm-left')
 })
+
+socket.on('left', name => {
+    append(`${name} left the chat`, 'm-left')
+})
