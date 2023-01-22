@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--connects server and client-->
-    <script src="http://localhost:8000/socket.io/socket.io.js"></script>
-    <script src="js/client.js"></script>
+    <script defer src="http://localhost:8000/socket.io/socket.io.js"></script>
+    <script defer src="js/client.js"></script>
     <link rel="stylesheet" href="./css/style.css">
     <title>NiChat App</title>
 </head>
@@ -20,8 +20,8 @@
 
     <!--Container for the chat app-->
     <div class="container">
-        <div class="message" id="m-left">Palpatine: Did you ever hear the tragedy of Darth Plagueis the wise?</div>
-        <div class="message" id="m-right">Anakin: No.</div>
+        <div class="message m-left">Palpatine: Did you ever hear the tragedy of Darth Plagueis the wise?</div>
+        <div class="message m-right">Anakin: No.</div>
     </div>
 
     <!--Send box-->

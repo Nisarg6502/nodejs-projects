@@ -31,12 +31,12 @@
     margin: 1.5rem;
 }
 
-#m-left{
+.m-left{
     float: left;
     clear: both;
 }
 
-#m-right{
+.m-right{
     float: right;
     clear: both;
 }

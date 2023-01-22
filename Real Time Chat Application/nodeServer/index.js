@@ -5,15 +5,12 @@ const io = require("socket.io")(8000)
 const users = {};
 
 io.on('connection', socket => { //io.on listens to several socket connections
-    console.log('a user connected');
-    socket.on('new-user-joined', person => { //accepts an event 'new-user-joined' 
-        console.log('New user', person)
-        users[socket.id] = person;
-        socket.broadcast.emit('user-joined', person)
+    socket.on('new-user-joined', name => { //accepts an event 'new-user-joined' 
+        console.log('New user', name)
+        users[socket.id] = name;
+        socket.broadcast.emit('user-joined', name) //server broadcasts an event named user-joined for clients
     });
     socket.on('send', message => {
-        socket.broadcast.emit('receive', { message: message, person: users[socket.id] })
+        socket.broadcast.emit('receive', { message: message, name: users[socket.id] })//server broadcasts event receive for the users
     });
 })
-
-console.log("Hello")
