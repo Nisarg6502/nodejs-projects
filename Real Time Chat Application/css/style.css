@@ -1,3 +1,14 @@
+body{
+    background-color: rgb(190, 255, 255);
+    font-size: 1.75rem;
+}
+
+h1{
+    text-align: center;
+    margin-top: 1rem;
+    font-family:'Times New Roman', Times, serif;
+}
+
 .logo{
     display: block;
     margin: auto;
@@ -7,8 +18,8 @@
 
 .container{
     margin: auto;
-    width: 75rem;
-    height: 33rem;
+    max-width: 75rem;
+    max-height: 33rem;
     background: rgba( 190, 255, 255, 0.25 );
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
     backdrop-filter: blur( 4px );
@@ -48,7 +59,7 @@
 }
 
 #msgInp{
-    width: 75rem;
+    width: 90%;
     height: max-content;
 }
 
@@ -57,7 +68,30 @@
     font-size: 1rem;
 }
 
-body{
-    background-color: rgb(190, 255, 255);
-    font-size: 1.75rem;
+@media (max-width: 700px) {
+    .message{
+        padding: 2rem;
+    }
+}
+@media (max-width: 500px) {
+    .message{
+        padding: 1rem;
+    }
+}
+@media (max-width: 400px) {
+    .message{
+        padding: 0.8rem;
+        font-size: smaller;
+        margin: 0.8rem;
+    }
+}
+@media (max-width: 300px) {
+    .message{
+        padding: 0.5rem;
+        font-size: small;
+        margin: 0.4rem;
+    }
+    h1{
+        font-size: smaller;
+    }
 }

@@ -5,6 +5,7 @@ const socket = io('http://localhost:8000', { transports: ['websocket'] });
 const form = document.getElementById('send-container');
 const msgInp = document.getElementById('msgInp');
 const msgContainer = document.querySelector(".container")
+var audio = new Audio('ting.mp3')
 
 //append function
 const append = (message, position) => {
@@ -13,6 +14,9 @@ const append = (message, position) => {
     messageElement.classList.add('message')
     messageElement.classList.add(position)
     msgContainer.append(messageElement)
+    if (position == 'm-left') {
+        audio.play();
+    }
 }
 
 form.addEventListener('submit', (e) => {
